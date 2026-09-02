@@ -1,0 +1,48 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Direct HTTP probes of the five canonical /.well-known/ paths against every host
+  associated with Upwing Energy. The only reachable host is the corporate website
+  www.upwingenergy.com (a Drupal site); api./developer./docs.upwingenergy.com do not
+  resolve in DNS, so there is no API host to probe.
+name: Upwing Energy well-known probe
+note: >-
+  Every path returned HTTP 404 with the site's HTML 404 page (~61KB of text/html),
+  so no /.well-known/ document is served. No WellKnown or SecurityTxt pointer is
+  emitted in apis.yml — this file records a verified ABSENCE, not a presence.
+hosts:
+- host: www.upwingenergy.com
+  role: website
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+unresolved_hosts:
+- host: api.upwingenergy.com
+  note: NXDOMAIN — no DNS record, not probed further
+- host: developer.upwingenergy.com
+  note: NXDOMAIN — no DNS record, not probed further
+- host: docs.upwingenergy.com
+  note: NXDOMAIN — no DNS record, not probed further
+x-evidence:
+  fetched: '2026-09-02'
+  user_agent: browser
+  robots_txt: 'https://www.upwingenergy.com/robots.txt -> 200, allows all user-agents'

@@ -1,0 +1,78 @@
+# Upwing Energy
+
+> Upwing Energy is an energy technology company (founded 2016, Cerritos, California,
+> with service operations near Houston, Texas) and an affiliate of Calnetix Technologies.
+> It builds the Subsurface Compressor System (SCS) — a downhole gas compressor deployed
+> up to two miles inside a natural gas well — plus Magnetic Drive Systems and the
+> high-speed turbomachinery that powers them. It sells hardware and field services to
+> natural gas operators, not software.
+
+## Provenance
+
+- generated: 2026-09-02
+- method: generated
+- source: API Evangelist catalog entry all/upwing-energy/apis.yml, plus probes of
+  www.upwingenergy.com (sitemap, robots.txt, /.well-known/*), DNS for api./developer./docs.
+  subdomains, and the GitHub organization Upwing-Energy.
+- note: This file is authored by API Evangelist. Upwing Energy does not publish an
+  llms.txt of its own — https://www.upwingenergy.com/llms.txt returned HTTP 404 on
+  2026-09-02.
+
+## API surface
+
+**Upwing Energy publishes no API.** As of 2026-09-02 there is no developer program,
+no public API, no SDK, no webhook catalog and no machine-readable specification of
+any kind (OpenAPI, AsyncAPI, GraphQL SDL, Protobuf, WSDL, JSON Schema, MCP server or
+A2A agent card). This is a completed measurement, not a gap in the search:
+
+- The site's own sitemap.xml (HTTP 200) enumerates ~90 pages — products, innovations,
+  impact, careers, press, legal — and contains no developer, docs, API or portal page.
+- /openapi.json, /swagger.json, /api-docs, /docs, /graphql, /llms.txt and all seven
+  probed /.well-known/ paths return HTTP 404 with the site's HTML 404 page.
+- api.upwingenergy.com, developer.upwingenergy.com and docs.upwingenergy.com do not
+  resolve in DNS.
+- The GitHub organization https://github.com/Upwing-Energy exists but has zero public
+  repositories.
+- No first-party client library exists on npm, PyPI or any other public registry.
+
+Customer telemetry from a deployed SCS is handled as a managed service, not as a
+product API: the operations-and-monitoring page states data is "sent and stored in the
+cloud for engineers to download and review in real-time" and that "Upwing can also push
+the available data in a format and frequency preferred by the client". That is a
+bilateral data-delivery arrangement, not a published contract.
+
+## Company
+
+- Website: https://www.upwingenergy.com/
+- About: https://www.upwingenergy.com/company/what-were-about
+- Innovations: https://www.upwingenergy.com/innovations-overview
+- End-to-end service: https://www.upwingenergy.com/e2e-service/overview
+- Impact: https://www.upwingenergy.com/impact/overview
+- News and events: https://www.upwingenergy.com/news-and-events
+- Careers: https://www.upwingenergy.com/company/careers
+- Contact: https://www.upwingenergy.com/contact-us
+- LinkedIn: https://www.linkedin.com/company/upwing-energy/
+- Parent/affiliate: Calnetix Technologies — https://www.calnetix.com/
+
+## Products
+
+- Subsurface Compressor System (SCS) — downhole gas compression, deployed in-well
+- Magnetic Drive Systems (MDS)
+- Hermetically sealed high-speed permanent magnet motors
+- Passive magnetic radial bearings; active magnetic thrust bearings
+- Magnetic couplings
+- Sensorless long-step-out variable speed drives
+
+## Domain security posture (probed 2026-09-02)
+
+- www.upwingenergy.com: HTTPS TLSv1.3, HSTS max-age 63072000
+- upwingenergy.com: SPF present, DMARC present (policy quarantine), DNSSEC absent,
+  no CAA records
+- No security.txt, no published vulnerability disclosure policy, no trust center
+
+## Catalog artifacts in this repository
+
+- apis.yml — the API Evangelist profile
+- well-known/upwing-energy-well-known.yml — recorded absence of every /.well-known/ document
+- security/upwing-energy-domain-security.yml — probed TLS/HSTS/DNS posture
+- llms/upwing-energy-llms.txt — this file

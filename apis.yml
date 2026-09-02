@@ -1,17 +1,37 @@
 aid: upwing-energy
 name: Upwing Energy
-description: 'Upwing Energy is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Upwing Energy is an energy technology company founded in 2016 and headquartered
+  in Cerritos, California, with service operations near Houston, Texas, operating as
+  an affiliate of Calnetix Technologies. It designs, manufactures and deploys the Subsurface
+  Compressor System (SCS) — a downhole gas compressor installed up to two miles inside
+  a natural gas well — along with Magnetic Drive Systems and the supporting high-speed
+  permanent magnet motors, passive magnetic radial bearings, active magnetic thrust
+  bearings, magnetic couplings and sensorless long-step-out variable speed drives that
+  make it work. The company sells hardware and an end-to-end field service (planning
+  and completions, deployment and startup, operations and monitoring, analysis and
+  predictions) to natural gas operators worldwide, including deployments with Equinor,
+  ENAP and operators across MENA and Central Asia. It publishes no developer program,
+  public API, SDK or machine-readable specification.'
 url: https://raw.githubusercontent.com/api-evangelist/upwing-energy/refs/heads/main/apis.yml
+image: https://www.upwingenergy.com/logo.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-09-02'
 modified: '2026-09-02'
 tags:
 - Company
+- Energy
+- Oil and Gas
+- Natural Gas
+- Artificial Lift
+- Gas Compression
+- Industrial Hardware
+- Manufacturing
+- Turbomachinery
+- Field Services
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,50 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/upwing-energy-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.upwingenergy.com/
+- type: About
+  url: https://www.upwingenergy.com/company/what-were-about
+- type: Support
+  url: https://www.upwingenergy.com/contact-us
+- type: Blog
+  url: https://www.upwingenergy.com/news-and-events
+- type: TermsOfService
+  url: https://www.upwingenergy.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.upwingenergy.com/privacy-policy
+- type: Careers
+  url: https://www.upwingenergy.com/company/careers
+- type: LinkedIn
+  url: https://www.linkedin.com/company/upwing-energy/
+- type: WellKnownProbe
+  url: well-known/upwing-energy-well-known.yml
+- type: LLMsTxt
+  url: llms/upwing-energy-llms.txt
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: Upwing Energy manufactures downhole gas-compression hardware and sells a
+    field service around it; its own sitemap enumerates 90 pages of products, impact,
+    careers and press with no developer, docs or API page, api./developer./docs.upwingenergy.com
+    do not resolve in DNS, and its GitHub organization Upwing-Energy has zero public
+    repositories.
+  evidence:
+  - url: https://www.upwingenergy.com/sitemap.xml
+    status: 200
+  - url: https://www.upwingenergy.com/openapi.json
+    status: 404
+  - url: https://www.upwingenergy.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.upwingenergy.com/
+    status: 0
+  - url: https://api.github.com/orgs/Upwing-Energy/repos
+    status: 200
+  checked: '2026-09-02'
